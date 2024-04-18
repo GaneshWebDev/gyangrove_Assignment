@@ -4,8 +4,7 @@ import { useEffect,useState } from 'react'
 import axios from 'axios';
 export default function Banner() {
     const [shows,setShows]=useState(null);
-      setTimeout(()=>{axios.get("https://gg-backend-assignment.azurewebsites.net/api/Events?code=FOX643kbHEAkyPbdd8nwNLkekHcL4z0hzWBGCd64Ur7mAzFuRCHeyQ==&type=reco").then((res)=>{
-        console.log(res.data.events);
+      useEffect(()=>{axios.get(`${import.meta.env.VITE_SHOWS_LINK}`).then((res)=>{
         setShows(res.data.events);
       })
   },[])

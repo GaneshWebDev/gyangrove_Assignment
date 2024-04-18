@@ -7,8 +7,7 @@ import './App.css'
 function App() {
   const [events,setEvents]=useState(null);
   useEffect(()=>{
-    axios.get('https://gg-backend-assignment.azurewebsites.net/api/Events?code=FOX643kbHEAkyPbdd8nwNLkekHcL4z0hzWBGCd64Ur7mAzFuRCHeyQ==&page=1&type=upcoming').then((res)=>{
-      console.log(res.data.events);
+    axios.get(import.meta.env.VITE_EVENTS_LINK).then((res)=>{
       setEvents(res.data.events);
     })
 },[])
