@@ -7,10 +7,10 @@ import './App.css'
 function App() {
   const [events,setEvents]=useState(null);
   useEffect(()=>{
-    setTimeout(()=>{axios.get('https://gg-backend-assignment.azurewebsites.net/api/Events?code=FOX643kbHEAkyPbdd8nwNLkekHcL4z0hzWBGCd64Ur7mAzFuRCHeyQ==&page=1&type=upcoming').then((res)=>{
+    axios.get('https://gg-backend-assignment.azurewebsites.net/api/Events?code=FOX643kbHEAkyPbdd8nwNLkekHcL4z0hzWBGCd64Ur7mAzFuRCHeyQ==&page=1&type=upcoming').then((res)=>{
       console.log(res.data.events);
       setEvents(res.data.events);
-    })},10000)
+    })
 },[])
   return (
     <div className='flex flex-col items-center justify-center'  style={{ fontFamily: 'Inter, sans-serif' }}>

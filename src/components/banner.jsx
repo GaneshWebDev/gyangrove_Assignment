@@ -4,11 +4,10 @@ import { useEffect,useState } from 'react'
 import axios from 'axios';
 export default function Banner() {
     const [shows,setShows]=useState(null);
-    useEffect(()=>{
       setTimeout(()=>{axios.get("https://gg-backend-assignment.azurewebsites.net/api/Events?code=FOX643kbHEAkyPbdd8nwNLkekHcL4z0hzWBGCd64Ur7mAzFuRCHeyQ==&type=reco").then((res)=>{
         console.log(res.data.events);
         setShows(res.data.events);
-      })},5000)
+      })
   },[])
     return (
       <div style={{backgroundImage: 'url("Banner.svg")'}} className="flex flex-col items-center justify-start h-[80vh] md:h-[87vh] w-full bg-cover bg-no-repeat bg-center  text-white">
